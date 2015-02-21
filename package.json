@@ -1,0 +1,21 @@
+{
+  "name": "react-snake",
+  "version": "1.0.0",
+  "description": "react snake clone",
+  "main": "index.html",
+  "author": "Ian Sinnott",
+  "dependencies": {
+    "react": "^0.12.2",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "axis": "^0.3.0",
+    "debug": "^2.1.1",
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-stylus": "^2.0.1",
+    "reactify": "^1.0.0",
+    "rupture": "^0.6.1"
+  }
+}
