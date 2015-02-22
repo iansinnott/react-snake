@@ -1,10 +1,15 @@
 var React = require('react');
 
+var SnakeGame = require('./SnakeGame');
+
 var App = React.createClass({
 
   render: function() {
     return (
-      <h1>Hey face nice face</h1>
+      <div>
+        <h1>Snake!</h1>
+        <SnakeGame />
+      </div>
     );
   }
 
