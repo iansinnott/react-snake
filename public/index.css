@@ -1,8 +1,0 @@
-body {
-  background: #d13f19;
-}
-@media only screen and (max-width: 500px) {
-  body {
-    background: #0074d9;
-  }
-}
