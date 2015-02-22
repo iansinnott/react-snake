@@ -62,16 +62,10 @@ var SnakeGame = React.createClass({
   _start: function() {
     if (!this.state.paused) return;
     debug('Game starting. Focusing board');
-    this.setState({ paused: false });
     this.refs.board.getDOMNode().focus();
-    this._tick();
-  },
-
-  /**
-   * Debug function
-   */
-  _handleClick: function(e) {
-    debug('hey nice click');
+    this.setState({ paused: false }, function() {
+      this._tick();
+    });
   },
 
   /**
@@ -79,6 +73,8 @@ var SnakeGame = React.createClass({
    */
   _handleKey: function(e) {
     debug('hey nice key', e.which);
+    if ([37, 38, 39, 40].indexOf(e.which) === -1) return;
+    this._nextDirection = e.which;
   },
 
   _pause: function() {
@@ -167,6 +163,7 @@ var SnakeGame = React.createClass({
           tabIndex='0'>
           { cells }
         </div>
+
       </div>
     );
   }
