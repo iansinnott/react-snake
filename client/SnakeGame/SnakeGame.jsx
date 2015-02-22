@@ -22,10 +22,16 @@ var SnakeGame = React.createClass({
     this.refs.board.getDOMNode().focus();
   },
 
+  /**
+   * Debug function
+   */
   _handleClick: function(e) {
     debug('hey nice click');
   },
 
+  /**
+   * Handle key pressees for controlling the snake
+   */
   _handleKey: function(e) {
     debug('hey nice key', e.which);
   },
