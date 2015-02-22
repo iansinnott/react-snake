@@ -60,12 +60,14 @@ var SnakeGame = React.createClass({
    * Start/resume the game.
    */
   _start: function() {
-    if (!this.state.paused) return;
     debug('Game starting. Focusing board');
     this.refs.board.getDOMNode().focus();
-    this.setState({ paused: false }, function() {
-      this._tick();
-    });
+  },
+
+  _resume: function() {
+    if (!this.state.paused) return;
+    debug('resuming game');
+    this.setState({ paused: false }, this._tick);
   },
 
   /**
@@ -157,13 +159,16 @@ var SnakeGame = React.createClass({
         <div
           ref='board'
           className={ classes }
-          onFocus={ this._start }
+          onFocus={ this._resume }
           onBlur={ this._pause }
           onKeyDown={ this._handleKey }
           tabIndex='0'>
           { cells }
         </div>
-
+        <div class="controls">
+          <button class="reset" onClick={ this._reset }>Reset</button>
+          <button class="resume" onClick={ this._start }>Resume</button>
+        </div>
       </div>
     );
   }
