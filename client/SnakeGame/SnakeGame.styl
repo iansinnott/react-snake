@@ -1,4 +1,26 @@
+cell-width = 30px
+num-cells = 20;
+size = (num-cells * cell-width)
+
 .board
-  height 300px
-  width 300px
+  height size
+  width size
   background black
+  line-height 0
+
+.cell
+  background black
+  width cell-width
+  height cell-width
+  display inline-block
+
+.cell-body
+.cell-food
+  @extends .cell
+
+.cell-body
+  background green
+
+.cell-food
+  @extends .cell
+  background yellow
