@@ -38,6 +38,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('html', function() {
+  debug('Copying HTML over to public/')
   gulp.src(paths.htmlMain)
     .pipe(gulp.dest(paths.destination));
 });
@@ -59,7 +60,8 @@ gulp.task('bundle', function() {
     .bundle()
     .pipe(plumber())
     .pipe(renameBundle('bundle.js'))
-    .pipe(gulp.dest(paths.destination));
+    .pipe(gulp.dest(paths.destination))
+    .pipe(connect.reload());
 })
 
 gulp.task('css', function() {
