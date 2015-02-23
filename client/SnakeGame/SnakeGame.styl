@@ -3,10 +3,28 @@ num-cells = 20;
 size = (num-cells * cell-width)
 
 .board
+  margin 0 auto
+  position relative
   height size
   width size
   background black
   line-height 0
+  outline none
+
+.paused
+  &:after
+    content 'Paused'
+    text-align center
+    padding-top 50%
+    font-size 70px
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    right 0
+    background transparentify(black, 50%)
+    color white
+
 
 .cell
   background black

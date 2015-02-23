@@ -1,3 +1,12 @@
+/**
+ * The classic snake game, built with React.
+ *
+ * This was largely inspired by:
+ * https://github.com/tomocchino/react-snake/blob/master/src/snake.js
+ */
+
+
+
 var React = require('react/addons'), // Full React + addons
     debug = require('debug')('SnakeGame');
 
@@ -89,7 +98,7 @@ var SnakeGame = React.createClass({
 
     debug('game not paused, ticking')
 
-    var gameSpeed = 300, // Lower Number  = > Faster Game speed
+    var gameSpeed = 100, // Lower Number  = > Faster Game speed
         snake     = this.state.snake,
         board     = this.state.board,
         direction = this.state.direction,
@@ -155,7 +164,7 @@ var SnakeGame = React.createClass({
 
     return (
       <div id="snake-game">
-        <h2>Snake game son</h2>
+        <h1>Snake!</h1>
         <div
           ref='board'
           className={ classes }
@@ -164,10 +173,6 @@ var SnakeGame = React.createClass({
           onKeyDown={ this._handleKey }
           tabIndex='0'>
           { cells }
-        </div>
-        <div class="controls">
-          <button class="reset" onClick={ this._reset }>Reset</button>
-          <button class="resume" onClick={ this._start }>Resume</button>
         </div>
       </div>
     );
